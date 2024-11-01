@@ -25,7 +25,9 @@ const Page = () => {
   const [email, setEmail] = useState("");
 
   const { startOAuthFlow: googleAuth } = useOAuth({ strategy: "oauth_google" });
-  const { startOAuthFlow: facebookAuth } = useOAuth({ strategy: "oauth_facebook" });
+  const { startOAuthFlow: facebookAuth } = useOAuth({
+    strategy: "oauth_facebook",
+  });
   const { startOAuthFlow: appleAuth } = useOAuth({ strategy: "oauth_apple" });
 
   const onSelectAuth = async (strategy: Strategy) => {

@@ -103,7 +103,7 @@ export default function RootLayout() {
                     headerBackTitle: "Wprdle",
                     headerTintColor:
                       colorScheme === "dark" ? "#ffffff" : "#000000",
-                    title: ""
+                    title: "",
                   }}
                 />
 
@@ -111,7 +111,7 @@ export default function RootLayout() {
                   name="end"
                   options={{
                     title: "",
-                    headerShown: false
+                    headerShown: false,
                   }}
                 />
               </Stack>

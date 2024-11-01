@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
   contentContainer: {
     flex: 1,
     backgroundColor: "#ffffff",
-    borderRadius: 16
+    borderRadius: 16,
   },
   containerHeadline: {
     fontSize: 18,

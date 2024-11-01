@@ -26,7 +26,7 @@ const Page = () => {
 
   const updateHighscore = async () => {
     if (!user) return;
-        
+
     const docRef = doc(FIRESTORE_DB, `highscore/${user.id}`);
     const userScore = await getDoc(docRef);
 
@@ -52,7 +52,7 @@ const Page = () => {
     }
 
     await setDoc(docRef, newScore);
-    
+
     setUserScore(newScore);
   };
 

@@ -33,7 +33,7 @@ const Page = () => {
   // const [word, setWord] = useState(
   //   words[Math.floor(Math.random() * words.length)]
   // );
-  const [word, setWord] = useState('simon');
+  const [word, setWord] = useState("simon");
 
   const colorScheme = useColorScheme();
   const backgroundColor = Colors[colorScheme ?? "light"].gameBg;
@@ -65,7 +65,8 @@ const Page = () => {
     rows
   )}` as Href;
 
-  const handlePresentSubscribeModalPress = () => settingsModalRef.current?.present();
+  const handlePresentSubscribeModalPress = () =>
+    settingsModalRef.current?.present();
 
   const colStateRef = useRef(curCol);
   const setCurCol = (data: number) => {
@@ -328,10 +329,7 @@ const Page = () => {
                 key={`cell-${rowIndex}-${cellIndex}`}
               >
                 <Animated.View
-                  style={[
-                    styles.cell,
-                    tileStyles[rowIndex][cellIndex],
-                  ]}
+                  style={[styles.cell, tileStyles[rowIndex][cellIndex]]}
                 >
                   <Animated.Text
                     style={[

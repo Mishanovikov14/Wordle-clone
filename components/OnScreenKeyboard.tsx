@@ -61,10 +61,10 @@ const OnScreenKeyboard = ({
                   backgroundColor: greenLetters.includes(key)
                     ? Colors.light.green
                     : yellowLetters.includes(key)
-                    ? Colors.light.yellow
-                    : grayLetters.includes(key)
-                    ? Colors.light.gray
-                    : "#dddddd",
+                      ? Colors.light.yellow
+                      : grayLetters.includes(key)
+                        ? Colors.light.gray
+                        : "#dddddd",
                 },
               ]}
             >
