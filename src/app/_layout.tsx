@@ -16,13 +16,13 @@ import { ClerkProvider, ClerkLoaded } from "@clerk/clerk-expo";
 import { Platform, Pressable, useColorScheme, Appearance } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
-import { tokenCache } from "@/utils/cache";
+import { tokenCache } from "@/src/utils/cache";
 
 import Logo from "@/assets/images/nyt-logo.svg";
 import { Ionicons } from "@expo/vector-icons";
-import { Colors } from "@/constants/Colors";
+import { Colors } from "@/src/constants/Colors";
 import { useMMKVBoolean } from "react-native-mmkv";
-import { storage } from "@/utils/storage";
+import { storage } from "@/src/utils/storage";
 
 const publishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!;
 

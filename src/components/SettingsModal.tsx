@@ -7,9 +7,9 @@ import {
 } from "@gorhom/bottom-sheet";
 import { Ionicons } from "@expo/vector-icons";
 export type Ref = BottomSheetModal;
-import { Colors } from "@/constants/Colors";
+import { Colors } from "@/src/constants/Colors";
 import { useMMKVBoolean } from "react-native-mmkv";
-import { storage } from "@/utils/storage";
+import { storage } from "@/src/utils/storage";
 
 const SettingsModal = forwardRef<Ref>((props, ref) => {
   const snapPoints = useMemo(() => ["50%"], []);
@@ -23,6 +23,7 @@ const SettingsModal = forwardRef<Ref>((props, ref) => {
   const toggleContrast = () => setContrast((prev) => !!!prev);
 
   const renderBackdrop = useCallback(
+    /* eslint-disable @typescript-eslint/no-explicit-any */
     (props: any) => (
       <BottomSheetBackdrop
         opacity={0.2}
@@ -101,6 +102,8 @@ const SettingsModal = forwardRef<Ref>((props, ref) => {
     </BottomSheetModal>
   );
 });
+
+SettingsModal.displayName = "SettingsModal";
 
 const styles = StyleSheet.create({
   contentContainer: {

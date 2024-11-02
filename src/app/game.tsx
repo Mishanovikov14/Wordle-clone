@@ -1,11 +1,11 @@
 import OnScreenKeyboard, {
   BACKSPACE,
   ENTER,
-} from "@/components/OnScreenKeyboard";
-import SettingsModal from "@/components/SettingsModal";
-import { Colors } from "@/constants/Colors";
-import { allWords } from "@/utils/allWords";
-import { words } from "@/utils/targetWords";
+} from "@/src/components/OnScreenKeyboard";
+import SettingsModal from "@/src/components/SettingsModal";
+import { Colors } from '@/src/constants/Colors';
+import { allWords } from "@/src/utils/allWords";
+// import { words } from "@/src/utils/targetWords";
 import { Ionicons } from "@expo/vector-icons";
 import { BottomSheetModal } from "@gorhom/bottom-sheet";
 import { Href, Stack, useRouter } from "expo-router";
@@ -33,7 +33,9 @@ const Page = () => {
   // const [word, setWord] = useState(
   //   words[Math.floor(Math.random() * words.length)]
   // );
-  const [word, setWord] = useState("simon");
+  // const [word, setWord] = useState("simon");
+
+  const word = "simon";
 
   const colorScheme = useColorScheme();
   const backgroundColor = Colors[colorScheme ?? "light"].gameBg;
@@ -155,6 +157,7 @@ const Page = () => {
   };
 
   useEffect(() => {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
     const handleKeyDown = (e: any) => {
       if (e.key === "Enter") {
         addKey(ENTER);

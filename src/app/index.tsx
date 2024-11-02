@@ -8,11 +8,11 @@ import {
 import Icon from "@/assets/images/wordle-icon.svg";
 import { Link } from "expo-router";
 import { format } from "date-fns";
-import { Colors } from "@/constants/Colors";
-import ThemedText from "@/components/ThemedText";
+import { Colors } from "@/src/constants/Colors";
+import ThemedText from "@/src/components/ThemedText";
 import { useRef } from "react";
 import { BottomSheetModal } from "@gorhom/bottom-sheet";
-import SubscribeModal from "@/components/SubscribeModal";
+import SubscribeModal from "@/src/components/SubscribeModal";
 import { SignedIn, SignedOut, useAuth } from "@clerk/clerk-expo";
 import Animated, {
   FadeIn,

@@ -2,12 +2,12 @@ import { Link, useLocalSearchParams, useRouter } from "expo-router";
 import { Image, StyleSheet, Text, Pressable, View } from "react-native";
 import Icon from "@/assets/images/wordle-icon.svg";
 import { Ionicons } from "@expo/vector-icons";
-import { Colors } from "@/constants/Colors";
+import { Colors } from "@/src/constants/Colors";
 import * as MailComposer from "expo-mail-composer";
 import { SignedIn, SignedOut, useUser } from "@clerk/clerk-expo";
 import { useEffect, useState } from "react";
 import { doc, getDoc, setDoc } from "firebase/firestore";
-import { FIRESTORE_DB } from "@/utils/FirebaseConfig";
+import { FIRESTORE_DB } from "@/src/utils/FirebaseConfig";
 
 const Page = () => {
   const { win, word, gameField } = useLocalSearchParams<{
@@ -18,6 +18,7 @@ const Page = () => {
 
   const router = useRouter();
   const { user } = useUser();
+  /* eslint-disable @typescript-eslint/no-explicit-any */
   const [userScore, setUserScore] = useState<any>(null);
 
   useEffect(() => {

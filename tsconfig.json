@@ -11,6 +11,6 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts",
-    "utils/customRender.js"
+    "src/utils/customRender.js"
   ]
 }

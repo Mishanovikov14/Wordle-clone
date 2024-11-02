@@ -8,11 +8,11 @@ import {
   useBottomSheetModal,
 } from "@gorhom/bottom-sheet";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { Link } from "expo-router";
-import { Colors } from "@/constants/Colors";
+// import { Link } from "expo-router";
+import { Colors } from "@/src/constants/Colors";
 import MarkedList from "@jsamr/react-native-li";
 import disc from "@jsamr/counter-style/presets/disc";
-import { defaultStyles } from "@/constants/Styles";
+import { defaultStyles } from "@/src/constants/Styles";
 
 export type Ref = BottomSheetModal;
 
@@ -30,6 +30,7 @@ const SubscribeModal = forwardRef<Ref>((props, ref) => {
   const { bottom } = useSafeAreaInsets();
 
   const renderBackdrop = useCallback(
+    /* eslint-disable @typescript-eslint/no-explicit-any */
     (props: any) => (
       <BottomSheetBackdrop
         opacity={0.8}
@@ -118,6 +119,8 @@ const SubscribeModal = forwardRef<Ref>((props, ref) => {
     </BottomSheetModal>
   );
 });
+
+SubscribeModal.displayName = "SubscribeModal";
 
 export default SubscribeModal;
 

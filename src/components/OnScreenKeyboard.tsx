@@ -7,7 +7,7 @@ import {
   View,
 } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { Colors } from "@/constants/Colors";
+import { Colors } from "@/src/constants/Colors";
 
 type OnScreenKeyboardProps = {
   onKeyPressed: (key: string) => void;

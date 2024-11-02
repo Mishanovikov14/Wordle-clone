@@ -9,9 +9,9 @@ import {
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
-import { Colors } from "@/constants/Colors";
+import { Colors } from "@/src/constants/Colors";
 import { useState } from "react";
-import { defaultStyles } from "@/constants/Styles";
+import { defaultStyles } from "@/src/constants/Styles";
 
 enum Strategy {
   Google = "oauth_google",
