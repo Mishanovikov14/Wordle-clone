@@ -3,7 +3,7 @@ import OnScreenKeyboard, {
   ENTER,
 } from "@/src/components/OnScreenKeyboard";
 import SettingsModal from "@/src/components/SettingsModal";
-import { Colors } from '@/src/constants/Colors';
+import { Colors } from "@/src/constants/Colors";
 import { allWords } from "@/src/utils/allWords";
 // import { words } from "@/src/utils/targetWords";
 import { Ionicons } from "@expo/vector-icons";
