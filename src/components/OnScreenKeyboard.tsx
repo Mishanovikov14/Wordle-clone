@@ -1,11 +1,4 @@
-import {
-  Platform,
-  Pressable,
-  StyleSheet,
-  Text,
-  useWindowDimensions,
-  View,
-} from "react-native";
+import { Platform, Pressable, StyleSheet, Text, useWindowDimensions, View } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Colors } from "@/src/constants/Colors";
 
@@ -79,11 +72,7 @@ const OnScreenKeyboard = ({
                   key === ENTER ? (
                     "ENTER"
                   ) : (
-                    <Ionicons
-                      name="backspace-outline"
-                      size={24}
-                      color="black"
-                    />
+                    <Ionicons name="backspace-outline" size={24} color="black" />
                   )
                 ) : (
                   key.toUpperCase()

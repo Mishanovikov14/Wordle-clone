@@ -1,10 +1,6 @@
 import { View, StyleSheet, Text, Pressable, Switch } from "react-native";
 import React, { forwardRef, useCallback, useMemo } from "react";
-import {
-  BottomSheetBackdrop,
-  BottomSheetModal,
-  useBottomSheetModal,
-} from "@gorhom/bottom-sheet";
+import { BottomSheetBackdrop, BottomSheetModal, useBottomSheetModal } from "@gorhom/bottom-sheet";
 import { Ionicons } from "@expo/vector-icons";
 export type Ref = BottomSheetModal;
 import { Colors } from "@/src/constants/Colors";
@@ -56,9 +52,7 @@ const SettingsModal = forwardRef<Ref>((props, ref) => {
           <View style={styles.row}>
             <View style={styles.rowText}>
               <Text style={styles.rowTextBig}>Hard Mode</Text>
-              <Text style={styles.rowTextSmall}>
-                Words are longer and harder
-              </Text>
+              <Text style={styles.rowTextSmall}>Words are longer and harder</Text>
             </View>
             <Switch
               onValueChange={toggleHard}
@@ -71,9 +65,7 @@ const SettingsModal = forwardRef<Ref>((props, ref) => {
           <View style={styles.row}>
             <View style={styles.rowText}>
               <Text style={styles.rowTextBig}>Dark Mode</Text>
-              <Text style={styles.rowTextSmall}>
-                Change the app to dark mode
-              </Text>
+              <Text style={styles.rowTextSmall}>Change the app to dark mode</Text>
             </View>
             <Switch
               onValueChange={toggleDark}
@@ -86,9 +78,7 @@ const SettingsModal = forwardRef<Ref>((props, ref) => {
           <View style={styles.row}>
             <View style={styles.rowText}>
               <Text style={styles.rowTextBig}>High Contrast Mode</Text>
-              <Text style={styles.rowTextSmall}>
-                Increase contrast for better visibility
-              </Text>
+              <Text style={styles.rowTextSmall}>Increase contrast for better visibility</Text>
             </View>
             <Switch
               onValueChange={toggleContrast}

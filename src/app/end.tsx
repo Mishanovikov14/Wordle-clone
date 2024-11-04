@@ -45,10 +45,7 @@ const Page = () => {
         played: data.played + 1,
         wins: win === "true" ? data.wins + 1 : data.wins,
         lastGame: win === "true" ? "win" : "loss",
-        currentStreak:
-          win === "true" && data.lastGame === "win"
-            ? data.currentStreak + 1
-            : 0,
+        currentStreak: win === "true" && data.lastGame === "win" ? data.currentStreak + 1 : 0,
       };
     }
 

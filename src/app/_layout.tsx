@@ -7,11 +7,7 @@ import {
   FrankRuhlLibre_900Black,
 } from "@expo-google-fonts/frank-ruhl-libre";
 import { useEffect } from "react";
-import {
-  DarkTheme,
-  DefaultTheme,
-  ThemeProvider,
-} from "@react-navigation/native";
+import { DarkTheme, DefaultTheme, ThemeProvider } from "@react-navigation/native";
 import { ClerkProvider, ClerkLoaded } from "@clerk/clerk-expo";
 import { Platform, Pressable, useColorScheme, Appearance } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
@@ -65,9 +61,7 @@ export default function RootLayout() {
   return (
     <ClerkProvider publishableKey={publishableKey} tokenCache={tokenCache}>
       <ClerkLoaded>
-        <ThemeProvider
-          value={colorScheme === "dark" ? DarkTheme : DefaultTheme}
-        >
+        <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
           <GestureHandlerRootView style={{ flex: 1 }}>
             <BottomSheetModalProvider>
               <Stack>
@@ -78,18 +72,13 @@ export default function RootLayout() {
                   options={{
                     presentation: "modal",
                     headerShadowVisible: false,
-                    headerTintColor:
-                      colorScheme === "dark" ? "#ffffff" : "#000000",
+                    headerTintColor: colorScheme === "dark" ? "#ffffff" : "#000000",
                     headerTitle: () => <Logo width={150} height={40} />,
                     headerLeft: () => {
                       return (
                         Platform.OS === "ios" && (
                           <Pressable onPress={() => router.back()}>
-                            <Ionicons
-                              name="close"
-                              size={26}
-                              color={Colors.light.gray}
-                            />
+                            <Ionicons name="close" size={26} color={Colors.light.gray} />
                           </Pressable>
                         )
                       );
@@ -101,8 +90,7 @@ export default function RootLayout() {
                   name="game"
                   options={{
                     headerBackTitle: "Wprdle",
-                    headerTintColor:
-                      colorScheme === "dark" ? "#ffffff" : "#000000",
+                    headerTintColor: colorScheme === "dark" ? "#ffffff" : "#000000",
                     title: "",
                   }}
                 />

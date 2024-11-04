@@ -1,10 +1,4 @@
-import {
-  Text,
-  View,
-  StyleSheet,
-  Pressable,
-  useColorScheme,
-} from "react-native";
+import { Text, View, StyleSheet, Pressable, useColorScheme } from "react-native";
 import Icon from "@/assets/images/wordle-icon.svg";
 import { Link } from "expo-router";
 import { format } from "date-fns";
@@ -14,11 +8,7 @@ import { useRef } from "react";
 import { BottomSheetModal } from "@gorhom/bottom-sheet";
 import SubscribeModal from "@/src/components/SubscribeModal";
 import { SignedIn, SignedOut, useAuth } from "@clerk/clerk-expo";
-import Animated, {
-  FadeIn,
-  FadeInDown,
-  FadeInLeft,
-} from "react-native-reanimated";
+import Animated, { FadeIn, FadeInDown, FadeInLeft } from "react-native-reanimated";
 
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
 
@@ -31,8 +21,7 @@ export default function Index() {
   const backgroundColor = Colors[colorScheme ?? "light"].background;
   const TextColor = Colors[colorScheme ?? "light"].text;
 
-  const handlePresentSubscribeModal = () =>
-    subscribeModalRef.current?.present();
+  const handlePresentSubscribeModal = () => subscribeModalRef.current?.present();
 
   return (
     <View style={[styles.container, { backgroundColor }]} testID="test">
@@ -41,9 +30,7 @@ export default function Index() {
       <Animated.View style={styles.header} entering={FadeInDown}>
         <Icon width={100} height={70} />
         <ThemedText style={styles.title}>Wordle</ThemedText>
-        <ThemedText style={styles.text}>
-          Get 6 chance to guess a 5 -letter word.
-        </ThemedText>
+        <ThemedText style={styles.text}>Get 6 chance to guess a 5 -letter word.</ThemedText>
       </Animated.View>
 
       <View style={styles.menu}>
@@ -63,11 +50,7 @@ export default function Index() {
         </Link>
 
         <SignedOut>
-          <Link
-            href="/login"
-            style={[styles.button, { borderColor: TextColor }]}
-            asChild
-          >
+          <Link href="/login" style={[styles.button, { borderColor: TextColor }]} asChild>
             <AnimatedPressable entering={FadeInLeft.delay(100)}>
               <ThemedText style={styles.buttonText}>Log in</ThemedText>
             </AnimatedPressable>
@@ -94,9 +77,7 @@ export default function Index() {
       </View>
 
       <Animated.View style={styles.footer} entering={FadeIn.delay(300)}>
-        <ThemedText style={styles.footerDate}>
-          {format(new Date(), "MMMM d, yyyy")}
-        </ThemedText>
+        <ThemedText style={styles.footerDate}>{format(new Date(), "MMMM d, yyyy")}</ThemedText>
         <ThemedText style={styles.footerText}>No. 1215</ThemedText>
         <ThemedText style={styles.footerText}>Editing by Mike</ThemedText>
       </Animated.View>

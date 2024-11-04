@@ -1,12 +1,5 @@
 import { useOAuth } from "@clerk/clerk-expo";
-import {
-  ScrollView,
-  StyleSheet,
-  Text,
-  TextInput,
-  Pressable,
-  View,
-} from "react-native";
+import { ScrollView, StyleSheet, Text, TextInput, Pressable, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 import { Colors } from "@/src/constants/Colors";
@@ -53,17 +46,11 @@ const Page = () => {
     <ScrollView style={styles.container}>
       <Text style={styles.header}>Log in or create an account</Text>
       <Text style={styles.subText}>
-        By continuing, you agree to the Terms of Sale, Terms of Service, and
-        Privacy Policy.
+        By continuing, you agree to the Terms of Sale, Terms of Service, and Privacy Policy.
       </Text>
 
       <Text style={styles.inputLabel}>Email address</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Email"
-        value={email}
-        onChangeText={setEmail}
-      />
+      <TextInput style={styles.input} placeholder="Email" value={email} onChangeText={setEmail} />
 
       <Pressable style={defaultStyles.btn}>
         <Text style={defaultStyles.btnText}>Continue with email</Text>
@@ -88,26 +75,17 @@ const Page = () => {
       </View>
 
       <View style={{ gap: 20 }}>
-        <Pressable
-          style={styles.btnOutline}
-          onPress={() => onSelectAuth(Strategy.Google)}
-        >
+        <Pressable style={styles.btnOutline} onPress={() => onSelectAuth(Strategy.Google)}>
           <Ionicons name="logo-google" size={24} style={styles.btnIcon} />
           <Text style={styles.btnOutlineText}>Continue with Google</Text>
         </Pressable>
 
-        <Pressable
-          style={styles.btnOutline}
-          onPress={() => onSelectAuth(Strategy.Facebook)}
-        >
+        <Pressable style={styles.btnOutline} onPress={() => onSelectAuth(Strategy.Facebook)}>
           <Ionicons name="logo-facebook" size={24} style={styles.btnIcon} />
           <Text style={styles.btnOutlineText}>Continue with Facebook</Text>
         </Pressable>
 
-        <Pressable
-          style={styles.btnOutline}
-          onPress={() => onSelectAuth(Strategy.Apple)}
-        >
+        <Pressable style={styles.btnOutline} onPress={() => onSelectAuth(Strategy.Apple)}>
           <Ionicons name="logo-apple" size={24} style={styles.btnIcon} />
           <Text style={styles.btnOutlineText}>Continue with Apple</Text>
         </Pressable>

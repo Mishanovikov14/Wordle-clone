@@ -1,7 +1,4 @@
-import OnScreenKeyboard, {
-  BACKSPACE,
-  ENTER,
-} from "@/src/components/OnScreenKeyboard";
+import OnScreenKeyboard, { BACKSPACE, ENTER } from "@/src/components/OnScreenKeyboard";
 import SettingsModal from "@/src/components/SettingsModal";
 import { Colors } from "@/src/constants/Colors";
 import { allWords } from "@/src/utils/allWords";
@@ -10,13 +7,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { BottomSheetModal } from "@gorhom/bottom-sheet";
 import { Href, Stack, useRouter } from "expo-router";
 import { useEffect, useRef, useState } from "react";
-import {
-  Platform,
-  StyleSheet,
-  Pressable,
-  useColorScheme,
-  View,
-} from "react-native";
+import { Platform, StyleSheet, Pressable, useColorScheme, View } from "react-native";
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
@@ -47,9 +38,7 @@ const Page = () => {
   console.log("Page word:", word);
   const wordLetters = word.split("");
 
-  const [rows, setRows] = useState<string[][]>(
-    new Array(ROWS).fill(new Array(5).fill(""))
-  );
+  const [rows, setRows] = useState<string[][]>(new Array(ROWS).fill(new Array(5).fill("")));
 
   const [curRow, setCurRow] = useState(0);
   const [curCol, _setCurCol] = useState(0);
@@ -60,15 +49,10 @@ const Page = () => {
 
   const settingsModalRef = useRef<BottomSheetModal>(null);
 
-  const winLink = `/end?win=true&word=${word}&gameField=${JSON.stringify(
-    rows
-  )}` as Href;
-  const loseLink = `/end?win=false&word=${word}&gameField=${JSON.stringify(
-    rows
-  )}` as Href;
+  const winLink = `/end?win=true&word=${word}&gameField=${JSON.stringify(rows)}` as Href;
+  const loseLink = `/end?win=false&word=${word}&gameField=${JSON.stringify(rows)}` as Href;
 
-  const handlePresentSubscribeModalPress = () =>
-    settingsModalRef.current?.present();
+  const handlePresentSubscribeModalPress = () => settingsModalRef.current?.present();
 
   const colStateRef = useRef(curCol);
   const setCurCol = (data: number) => {
@@ -205,11 +189,7 @@ const Page = () => {
     }
   };
 
-  const setBorderColor = (
-    cell: string,
-    rowIndex: number,
-    cellIndex: number
-  ) => {
+  const setBorderColor = (cell: string, rowIndex: number, cellIndex: number) => {
     if (curRow > rowIndex && cell !== "") {
       if (wordLetters[cellIndex] === cell) {
         cellBorders[rowIndex][cellIndex].value = withDelay(
@@ -222,10 +202,7 @@ const Page = () => {
           withTiming(Colors.light.yellow)
         );
       } else {
-        cellBorders[rowIndex][cellIndex].value = withDelay(
-          cellIndex * 200,
-          withTiming(grayColor)
-        );
+        cellBorders[rowIndex][cellIndex].value = withDelay(cellIndex * 200, withTiming(grayColor));
       }
     }
     return Colors.light.gray;
@@ -307,11 +284,7 @@ const Page = () => {
         options={{
           headerRight: () => (
             <View style={styles.headerIcons}>
-              <Ionicons
-                name="help-circle-outline"
-                size={28}
-                color={textColor}
-              />
+              <Ionicons name="help-circle-outline" size={28} color={textColor} />
               <Ionicons name="podium-outline" size={24} color={textColor} />
               <Pressable onPress={handlePresentSubscribeModalPress}>
                 <Ionicons name="settings-sharp" size={24} color={textColor} />
@@ -322,18 +295,13 @@ const Page = () => {
       />
       <View style={styles.gameField}>
         {rows.map((row, rowIndex) => (
-          <Animated.View
-            style={[styles.gameFieldRow, rowStyles[rowIndex]]}
-            key={`row-${rowIndex}`}
-          >
+          <Animated.View style={[styles.gameFieldRow, rowStyles[rowIndex]]} key={`row-${rowIndex}`}>
             {row.map((cell, cellIndex) => (
               <Animated.View
                 entering={ZoomIn.delay(50 * cellIndex)}
                 key={`cell-${rowIndex}-${cellIndex}`}
               >
-                <Animated.View
-                  style={[styles.cell, tileStyles[rowIndex][cellIndex]]}
-                >
+                <Animated.View style={[styles.cell, tileStyles[rowIndex][cellIndex]]}>
                   <Animated.Text
                     style={[
                       styles.cellText,
